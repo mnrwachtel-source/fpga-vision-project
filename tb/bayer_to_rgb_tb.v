@@ -27,7 +27,9 @@ module bayer_to_rgb_tb;
     always #5 clk = ~clk;
 
     initial begin
-
+        $dumpfile("sim/bayer_to_rgb.vcd");
+        $dumpvars(0, bayer_to_rgb_tb);
+        
         clk = 0;
         rst_n = 0;
 

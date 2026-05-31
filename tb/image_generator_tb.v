@@ -21,6 +21,9 @@ module image_generator_tb;
     always #5 clk = ~clk;
 
     initial begin
+        $dumpfile("sim/image_generator.vcd");
+        $dumpvars(0, image_generator_tb);
+        
         clk = 0;
         rst_n = 0;
         x = 0;

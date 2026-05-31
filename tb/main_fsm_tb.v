@@ -37,7 +37,9 @@ module main_fsm_tb;
     always #5 clk = ~clk;
 
     initial begin
-
+       $dumpfile("sim/main_fsm.vcd");
+       $dumpvars(0, main_fsm_tb);
+       
         clk = 0;
         rst_n = 0;
 
