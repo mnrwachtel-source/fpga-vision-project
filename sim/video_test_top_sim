@@ -1,0 +1,245 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001ef16319f10 .scope module, "video_test_top_tb" "video_test_top_tb" 2 3;
+ .timescale -9 -12;
+v000001ef16380660_0 .net "active_video", 0 0, v000001ef1631a140_0;  1 drivers
+v000001ef163808e0_0 .var "clk", 0 0;
+v000001ef16380700_0 .net "hsync", 0 0, v000001ef16330ed0_0;  1 drivers
+v000001ef16380c00_0 .net "pixel_out", 7 0, v000001ef160869f0_0;  1 drivers
+v000001ef16380d40_0 .var "rst_n", 0 0;
+v000001ef16380de0_0 .net "vsync", 0 0, v000001ef16086370_0;  1 drivers
+S_000001ef16330b10 .scope module, "uut" "video_test_top" 2 13, 3 1 0, S_000001ef16319f10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /OUTPUT 1 "hsync";
+    .port_info 3 /OUTPUT 1 "vsync";
+    .port_info 4 /OUTPUT 1 "active_video";
+    .port_info 5 /OUTPUT 8 "pixel_out";
+v000001ef16380ca0_0 .net "active_video", 0 0, v000001ef1631a140_0;  alias, 1 drivers
+v000001ef16380a20_0 .net "clk", 0 0, v000001ef163808e0_0;  1 drivers
+v000001ef163803e0_0 .net "hsync", 0 0, v000001ef16330ed0_0;  alias, 1 drivers
+v000001ef16380f20_0 .net "pixel_out", 7 0, v000001ef160869f0_0;  alias, 1 drivers
+v000001ef16380480_0 .net "rst_n", 0 0, v000001ef16380d40_0;  1 drivers
+v000001ef16380ac0_0 .net "vsync", 0 0, v000001ef16086370_0;  alias, 1 drivers
+v000001ef16380520_0 .net "x", 9 0, v000001ef16086410_0;  1 drivers
+v000001ef163805c0_0 .net "y", 9 0, v000001ef160864b0_0;  1 drivers
+S_000001ef16330ca0 .scope module, "img_gen_inst" "image_generator" 3 24, 4 1 0, S_000001ef16330b10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 10 "x";
+    .port_info 3 /INPUT 10 "y";
+    .port_info 4 /OUTPUT 8 "pixel_out";
+v000001ef1608b600_0 .net "clk", 0 0, v000001ef163808e0_0;  alias, 1 drivers
+v000001ef160869f0_0 .var "pixel_out", 7 0;
+v000001ef16086c10_0 .net "rst_n", 0 0, v000001ef16380d40_0;  alias, 1 drivers
+v000001ef1608be10_0 .net "x", 9 0, v000001ef16086410_0;  alias, 1 drivers
+v000001ef1631a0a0_0 .net "y", 9 0, v000001ef160864b0_0;  alias, 1 drivers
+E_000001ef163197d0/0 .event negedge, v000001ef16086c10_0;
+E_000001ef163197d0/1 .event posedge, v000001ef1608b600_0;
+E_000001ef163197d0 .event/or E_000001ef163197d0/0, E_000001ef163197d0/1;
+S_000001ef163292c0 .scope module, "vga_inst" "vga_controller" 3 14, 5 1 0, S_000001ef16330b10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /OUTPUT 10 "x";
+    .port_info 3 /OUTPUT 10 "y";
+    .port_info 4 /OUTPUT 1 "hsync";
+    .port_info 5 /OUTPUT 1 "vsync";
+    .port_info 6 /OUTPUT 1 "active_video";
+P_000001ef16329450 .param/l "H_ACTIVE" 1 5 13, +C4<00000000000000000000001010000000>;
+P_000001ef16329488 .param/l "H_BACK" 1 5 16, +C4<00000000000000000000000000110000>;
+P_000001ef163294c0 .param/l "H_FRONT" 1 5 14, +C4<00000000000000000000000000010000>;
+P_000001ef163294f8 .param/l "H_SYNC" 1 5 15, +C4<00000000000000000000000001100000>;
+P_000001ef16329530 .param/l "H_TOTAL" 1 5 17, +C4<00000000000000000000001100100000>;
+P_000001ef16329568 .param/l "V_ACTIVE" 1 5 19, +C4<00000000000000000000000111100000>;
+P_000001ef163295a0 .param/l "V_BACK" 1 5 22, +C4<00000000000000000000000000100001>;
+P_000001ef163295d8 .param/l "V_FRONT" 1 5 20, +C4<00000000000000000000000000001010>;
+P_000001ef16329610 .param/l "V_SYNC" 1 5 21, +C4<00000000000000000000000000000010>;
+P_000001ef16329648 .param/l "V_TOTAL" 1 5 23, +C4<00000000000000000000001000001101>;
+v000001ef1631a140_0 .var "active_video", 0 0;
+v000001ef16329690_0 .net "clk", 0 0, v000001ef163808e0_0;  alias, 1 drivers
+v000001ef16330e30_0 .var "h_count", 9 0;
+v000001ef16330ed0_0 .var "hsync", 0 0;
+v000001ef16324560_0 .net "rst_n", 0 0, v000001ef16380d40_0;  alias, 1 drivers
+v000001ef16324600_0 .var "v_count", 9 0;
+v000001ef16086370_0 .var "vsync", 0 0;
+v000001ef16086410_0 .var "x", 9 0;
+v000001ef160864b0_0 .var "y", 9 0;
+E_000001ef16319bd0 .event anyedge, v000001ef16330e30_0, v000001ef16324600_0, v000001ef1631a140_0;
+    .scope S_000001ef163292c0;
+T_0 ;
+    %wait E_000001ef163197d0;
+    %load/vec4 v000001ef16324560_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 10;
+    %assign/vec4 v000001ef16330e30_0, 0;
+    %pushi/vec4 0, 0, 10;
+    %assign/vec4 v000001ef16324600_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000001ef16330e30_0;
+    %pad/u 32;
+    %cmpi/e 799, 0, 32;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 0, 0, 10;
+    %assign/vec4 v000001ef16330e30_0, 0;
+    %load/vec4 v000001ef16324600_0;
+    %pad/u 32;
+    %cmpi/e 524, 0, 32;
+    %jmp/0xz  T_0.4, 4;
+    %pushi/vec4 0, 0, 10;
+    %assign/vec4 v000001ef16324600_0, 0;
+    %jmp T_0.5;
+T_0.4 ;
+    %load/vec4 v000001ef16324600_0;
+    %addi 1, 0, 10;
+    %assign/vec4 v000001ef16324600_0, 0;
+T_0.5 ;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v000001ef16330e30_0;
+    %addi 1, 0, 10;
+    %assign/vec4 v000001ef16330e30_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001ef163292c0;
+T_1 ;
+    %wait E_000001ef16319bd0;
+    %load/vec4 v000001ef16330e30_0;
+    %pad/u 32;
+    %cmpi/u 640, 0, 32;
+    %flag_get/vec4 5;
+    %jmp/0 T_1.0, 5;
+    %load/vec4 v000001ef16324600_0;
+    %pad/u 32;
+    %cmpi/u 480, 0, 32;
+    %flag_get/vec4 5;
+    %and;
+T_1.0;
+    %store/vec4 v000001ef1631a140_0, 0, 1;
+    %load/vec4 v000001ef1631a140_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.1, 8;
+    %load/vec4 v000001ef16330e30_0;
+    %jmp/1 T_1.2, 8;
+T_1.1 ; End of true expr.
+    %pushi/vec4 0, 0, 10;
+    %jmp/0 T_1.2, 8;
+ ; End of false expr.
+    %blend;
+T_1.2;
+    %store/vec4 v000001ef16086410_0, 0, 10;
+    %load/vec4 v000001ef1631a140_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.3, 8;
+    %load/vec4 v000001ef16324600_0;
+    %jmp/1 T_1.4, 8;
+T_1.3 ; End of true expr.
+    %pushi/vec4 0, 0, 10;
+    %jmp/0 T_1.4, 8;
+ ; End of false expr.
+    %blend;
+T_1.4;
+    %store/vec4 v000001ef160864b0_0, 0, 10;
+    %load/vec4 v000001ef16330e30_0;
+    %pad/u 32;
+    %cmpi/u 656, 0, 32;
+    %flag_inv 5; GE is !LT
+    %flag_get/vec4 5;
+    %jmp/0 T_1.5, 5;
+    %load/vec4 v000001ef16330e30_0;
+    %pad/u 32;
+    %cmpi/u 752, 0, 32;
+    %flag_get/vec4 5;
+    %and;
+T_1.5;
+    %inv;
+    %store/vec4 v000001ef16330ed0_0, 0, 1;
+    %load/vec4 v000001ef16324600_0;
+    %pad/u 32;
+    %cmpi/u 490, 0, 32;
+    %flag_inv 5; GE is !LT
+    %flag_get/vec4 5;
+    %jmp/0 T_1.6, 5;
+    %load/vec4 v000001ef16324600_0;
+    %pad/u 32;
+    %cmpi/u 492, 0, 32;
+    %flag_get/vec4 5;
+    %and;
+T_1.6;
+    %inv;
+    %store/vec4 v000001ef16086370_0, 0, 1;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_000001ef16330ca0;
+T_2 ;
+    %wait E_000001ef163197d0;
+    %load/vec4 v000001ef16086c10_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v000001ef160869f0_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v000001ef1608be10_0;
+    %parti/s 1, 5, 4;
+    %load/vec4 v000001ef1631a0a0_0;
+    %parti/s 1, 5, 4;
+    %xor;
+    %cmpi/e 1, 0, 1;
+    %jmp/0xz  T_2.2, 4;
+    %pushi/vec4 255, 0, 8;
+    %assign/vec4 v000001ef160869f0_0, 0;
+    %jmp T_2.3;
+T_2.2 ;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v000001ef160869f0_0, 0;
+T_2.3 ;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_000001ef16319f10;
+T_3 ;
+    %delay 20000, 0;
+    %load/vec4 v000001ef163808e0_0;
+    %inv;
+    %store/vec4 v000001ef163808e0_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_000001ef16319f10;
+T_4 ;
+    %vpi_call 2 25 "$dumpfile", "sim/video_test_top.vcd" {0 0 0};
+    %vpi_call 2 26 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001ef16319f10 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ef163808e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ef16380d40_0, 0, 1;
+    %delay 100000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001ef16380d40_0, 0, 1;
+    %delay 100000000, 0;
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "tb/video_test_top_tb.v";
+    "rtl/video_test_top.v";
+    "rtl/image_generator.v";
+    "rtl/vga_controller.v";
