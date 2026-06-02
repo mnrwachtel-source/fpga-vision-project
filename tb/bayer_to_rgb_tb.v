@@ -3,6 +3,7 @@
 module bayer_to_rgb_tb;
 
     reg clk;
+    reg valid_in;
     reg rst_n;
 
     reg [7:0] pixel_in;
@@ -16,6 +17,7 @@ module bayer_to_rgb_tb;
     bayer_to_rgb uut (
         .clk(clk),
         .rst_n(rst_n),
+        .valid_in(valid_in),
         .pixel_in(pixel_in),
         .x(x),
         .y(y),
@@ -32,6 +34,7 @@ module bayer_to_rgb_tb;
         
         clk = 0;
         rst_n = 0;
+        valid_in = 0;
 
         pixel_in = 0;
         x = 0;
@@ -39,6 +42,7 @@ module bayer_to_rgb_tb;
 
         #20;
         rst_n = 1;
+        valid_in = 1;
 
         // Red pixel
         #10;

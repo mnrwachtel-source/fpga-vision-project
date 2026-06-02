@@ -36,6 +36,7 @@ module isp_test_top (
     bayer_to_rgb isp_inst (
         .clk(clk),
         .rst_n(rst_n),
+        .valid_in(active_video),
         .pixel_in(raw_pixel),
         .x(x),
         .y(y),

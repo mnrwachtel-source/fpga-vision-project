@@ -1,0 +1,569 @@
+$date
+	Tue Jun 02 14:21:52 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module camera_pipeline_top_tb $end
+$var wire 8 ! r [7:0] $end
+$var wire 1 " isp_valid $end
+$var wire 8 # g [7:0] $end
+$var wire 8 $ b [7:0] $end
+$var reg 8 % cam_data [7:0] $end
+$var reg 1 & href $end
+$var reg 1 ' isp_valid_seen $end
+$var reg 8 ( last_b [7:0] $end
+$var reg 8 ) last_g [7:0] $end
+$var reg 8 * last_r [7:0] $end
+$var reg 1 + pclk $end
+$var reg 1 , rst_n $end
+$var reg 1 - vsync $end
+$var integer 32 . col [31:0] $end
+$var integer 32 / row [31:0] $end
+$scope module uut $end
+$var wire 8 0 cam_data [7:0] $end
+$var wire 1 & href $end
+$var wire 1 " isp_valid $end
+$var wire 1 + pclk $end
+$var wire 1 , rst_n $end
+$var wire 1 - vsync $end
+$var wire 8 1 r [7:0] $end
+$var wire 1 2 pixel_valid $end
+$var wire 8 3 pixel_data [7:0] $end
+$var wire 1 4 line_valid $end
+$var wire 8 5 g [7:0] $end
+$var wire 1 6 frame_valid $end
+$var wire 8 7 b [7:0] $end
+$var reg 10 8 pixel_x [9:0] $end
+$var reg 10 9 pixel_y [9:0] $end
+$var reg 1 : prev_frame_valid $end
+$var reg 1 ; prev_line_valid $end
+$scope module u_capture $end
+$var wire 8 < cam_data [7:0] $end
+$var wire 1 & href $end
+$var wire 1 + pclk $end
+$var wire 1 , rst_n $end
+$var wire 1 - vsync $end
+$var reg 1 6 frame_valid $end
+$var reg 1 4 line_valid $end
+$var reg 8 = pixel_data [7:0] $end
+$var reg 1 2 pixel_valid $end
+$upscope $end
+$scope module u_isp $end
+$var wire 1 + clk $end
+$var wire 8 > pixel_in [7:0] $end
+$var wire 1 , rst_n $end
+$var wire 1 2 valid_in $end
+$var wire 10 ? x [9:0] $end
+$var wire 10 @ y [9:0] $end
+$var reg 8 A b [7:0] $end
+$var reg 8 B g [7:0] $end
+$var reg 8 C r [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+b0 =
+b0 <
+0;
+0:
+b0 9
+b0 8
+b0 7
+06
+b0 5
+04
+b0 3
+02
+b0 1
+b0 0
+bx /
+bx .
+1-
+0,
+0+
+b0 *
+b0 )
+b0 (
+0'
+0&
+b0 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#5000
+1+
+#10000
+0+
+#15000
+1+
+#20000
+0+
+1,
+#25000
+1+
+#30000
+0+
+#35000
+1+
+#40000
+0+
+#45000
+1+
+#50000
+0+
+0-
+#55000
+16
+1+
+#60000
+0+
+b0 .
+1&
+b0 /
+#65000
+1:
+1"
+12
+14
+1+
+#70000
+0+
+b1 %
+b1 0
+b1 <
+b1 .
+#75000
+b1 3
+b1 =
+b1 >
+b1 8
+b1 ?
+1;
+1'
+1+
+#80000
+0+
+b10 %
+b10 0
+b10 <
+b10 .
+#85000
+b10 8
+b10 ?
+b1 #
+b1 5
+b1 B
+b10 3
+b10 =
+b10 >
+1+
+#90000
+0+
+b11 %
+b11 0
+b11 <
+b11 .
+#95000
+b11 3
+b11 =
+b11 >
+b10 !
+b10 1
+b10 C
+b0 #
+b0 5
+b0 B
+b11 8
+b11 ?
+b1 )
+1+
+#100000
+0+
+0&
+b100 .
+#105000
+b100 8
+b100 ?
+b11 #
+b11 5
+b11 B
+b0 !
+b0 1
+b0 C
+0"
+02
+04
+b0 )
+b10 *
+1+
+#110000
+0+
+#115000
+b0 #
+b0 5
+b0 B
+b0 8
+b0 ?
+b1 9
+b1 @
+0;
+1+
+#120000
+0+
+b10000 %
+b10000 0
+b10000 <
+b0 .
+1&
+b1 /
+#125000
+1"
+12
+b10000 3
+b10000 =
+b10000 >
+14
+1+
+#130000
+0+
+b10001 %
+b10001 0
+b10001 <
+b1 .
+#135000
+b10001 3
+b10001 =
+b10001 >
+b10000 #
+b10000 5
+b10000 B
+b1 8
+b1 ?
+1;
+b0 *
+1+
+#140000
+0+
+b10010 %
+b10010 0
+b10010 <
+b10 .
+#145000
+b10 8
+b10 ?
+b10001 $
+b10001 7
+b10001 A
+b0 #
+b0 5
+b0 B
+b10010 3
+b10010 =
+b10010 >
+b10000 )
+1+
+#150000
+0+
+b10011 %
+b10011 0
+b10011 <
+b11 .
+#155000
+b10011 3
+b10011 =
+b10011 >
+b10010 #
+b10010 5
+b10010 B
+b0 $
+b0 7
+b0 A
+b11 8
+b11 ?
+b10001 (
+b0 )
+1+
+#160000
+0+
+0&
+b100 .
+#165000
+b100 8
+b100 ?
+b10011 $
+b10011 7
+b10011 A
+b0 #
+b0 5
+b0 B
+0"
+02
+04
+b0 (
+b10010 )
+1+
+#170000
+0+
+#175000
+b0 $
+b0 7
+b0 A
+b0 8
+b0 ?
+b10 9
+b10 @
+0;
+1+
+#180000
+0+
+b100000 %
+b100000 0
+b100000 <
+b0 .
+1&
+b10 /
+#185000
+1"
+12
+b100000 3
+b100000 =
+b100000 >
+14
+1+
+#190000
+0+
+b100001 %
+b100001 0
+b100001 <
+b1 .
+#195000
+b100001 3
+b100001 =
+b100001 >
+b100000 !
+b100000 1
+b100000 C
+b1 8
+b1 ?
+1;
+b0 )
+1+
+#200000
+0+
+b100010 %
+b100010 0
+b100010 <
+b10 .
+#205000
+b10 8
+b10 ?
+b100001 #
+b100001 5
+b100001 B
+b0 !
+b0 1
+b0 C
+b100010 3
+b100010 =
+b100010 >
+b100000 *
+1+
+#210000
+0+
+b100011 %
+b100011 0
+b100011 <
+b11 .
+#215000
+b100011 3
+b100011 =
+b100011 >
+b100010 !
+b100010 1
+b100010 C
+b0 #
+b0 5
+b0 B
+b11 8
+b11 ?
+b100001 )
+b0 *
+1+
+#220000
+0+
+0&
+b100 .
+#225000
+b100 8
+b100 ?
+b100011 #
+b100011 5
+b100011 B
+b0 !
+b0 1
+b0 C
+0"
+02
+04
+b0 )
+b100010 *
+1+
+#230000
+0+
+#235000
+b0 #
+b0 5
+b0 B
+b0 8
+b0 ?
+b11 9
+b11 @
+0;
+1+
+#240000
+0+
+b110000 %
+b110000 0
+b110000 <
+b0 .
+1&
+b11 /
+#245000
+1"
+12
+b110000 3
+b110000 =
+b110000 >
+14
+1+
+#250000
+0+
+b110001 %
+b110001 0
+b110001 <
+b1 .
+#255000
+b110001 3
+b110001 =
+b110001 >
+b110000 #
+b110000 5
+b110000 B
+b1 8
+b1 ?
+1;
+b0 *
+1+
+#260000
+0+
+b110010 %
+b110010 0
+b110010 <
+b10 .
+#265000
+b10 8
+b10 ?
+b110001 $
+b110001 7
+b110001 A
+b0 #
+b0 5
+b0 B
+b110010 3
+b110010 =
+b110010 >
+b110000 )
+1+
+#270000
+0+
+b110011 %
+b110011 0
+b110011 <
+b11 .
+#275000
+b110011 3
+b110011 =
+b110011 >
+b110010 #
+b110010 5
+b110010 B
+b0 $
+b0 7
+b0 A
+b11 8
+b11 ?
+b110001 (
+b0 )
+1+
+#280000
+0+
+0&
+b100 .
+#285000
+b100 8
+b100 ?
+b110011 $
+b110011 7
+b110011 A
+b0 #
+b0 5
+b0 B
+0"
+02
+04
+b0 (
+b110010 )
+1+
+#290000
+0+
+#295000
+b0 $
+b0 7
+b0 A
+b0 8
+b0 ?
+b100 9
+b100 @
+0;
+1+
+#300000
+0+
+1-
+b100 /
+#305000
+06
+1+
+#310000
+0+
+#315000
+b0 9
+b0 @
+0:
+1+
+#320000
+0+
+#325000
+1+
+#330000
+0+
+#335000
+1+
+#340000
+0+
